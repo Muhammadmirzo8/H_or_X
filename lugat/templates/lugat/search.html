@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X yoki H</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app2.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.css' %}">
+
+</head>
+
+<body style="background-color:rgb(21,100,47)">
+    <div class="containers">
+        <div class="search">
+            <form action="search" method="GET">
+                <input type="search" placeholder="So'zni kiriting" name="soz">
+                <button type="submit">Qidirish</button>
+            </form>
+        </div>
+        <div class="wrapp">
+            <div class="left" id="left">
+                <h1 style="text-align:center">To'gri so'z</h1>
+                <h4 style="text-align:center;">{{t_soz}} &#10004</h4>
+            </div>
+
+            <div class="right" id="right">
+                <h1 style="text-align:center">No'togri so'z</h1>
+                {%for i in nsoz%}
+                <h4 style="text-align:center">{{i}} &#10006 </h4>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
